@@ -1,7 +1,6 @@
 package br.org.jogomatematicoj.imagens;
 
 import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -48,7 +47,7 @@ public class SelecionaImagem {
         }
 
         public ImageIcon getBlankIcon(){
-            String path = imagesRoot + "/blank.jpg";
+            String path = imagesRoot + "/blank" + EXTENSION_FILE_PNG;
             ImageIcon icon = new ImageIcon(getClass().getResource(path));
             return icon;
         }
