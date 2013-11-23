@@ -23,7 +23,7 @@ public class Divisao extends OperacoesBase{
         setFator1(getNroRandomico().nextInt(limiteFator1));
         setFator2(getNroRandomico().nextInt(limiteFator2));
         
-        while((getFator1()%getFator2())!=0){
+        while((getFator2()!=0) && (getFator1()%getFator2())!=0){
             setFator1(getNroRandomico().nextInt(limiteFator1));
         }
             
