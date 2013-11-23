@@ -12,23 +12,24 @@ public class SelecionaImagem {
         private String[] imagensNumeroPath = new String[10];
         private String[] imagensOperacaoPath = new String[4];
         private String imagesRoot = null;
+        private static final String EXTENSION_FILE_PNG = ".png";
         
         public SelecionaImagem(){
-            imagensNumeroPath[0]="/000.jpg";
-            imagensNumeroPath[1]="/001.jpg";
-            imagensNumeroPath[2]="/002.jpg";
-            imagensNumeroPath[3]="/003.jpg";
-            imagensNumeroPath[4]="/004.jpg";
-            imagensNumeroPath[5]="/005.jpg";
-            imagensNumeroPath[6]="/006.jpg";
-            imagensNumeroPath[7]="/007.jpg";
-            imagensNumeroPath[8]="/008.jpg";
-            imagensNumeroPath[9]="/009.jpg";
+            imagensNumeroPath[0]="/000" + EXTENSION_FILE_PNG;
+            imagensNumeroPath[1]="/001" + EXTENSION_FILE_PNG;
+            imagensNumeroPath[2]="/002" + EXTENSION_FILE_PNG;
+            imagensNumeroPath[3]="/003" + EXTENSION_FILE_PNG;
+            imagensNumeroPath[4]="/004" + EXTENSION_FILE_PNG;
+            imagensNumeroPath[5]="/005" + EXTENSION_FILE_PNG;
+            imagensNumeroPath[6]="/006" + EXTENSION_FILE_PNG;
+            imagensNumeroPath[7]="/007" + EXTENSION_FILE_PNG;
+            imagensNumeroPath[8]="/008" + EXTENSION_FILE_PNG;
+            imagensNumeroPath[9]="/009" + EXTENSION_FILE_PNG;
             
-            imagensOperacaoPath[0]="/soma.jpg";
-            imagensOperacaoPath[1]="/subtracao.jpg";
-            imagensOperacaoPath[2]="/multiplicacao.jpg";
-            imagensOperacaoPath[3]="/divisao.jpg";
+            imagensOperacaoPath[0]="/soma" + EXTENSION_FILE_PNG;
+            imagensOperacaoPath[1]="/subtracao" + EXTENSION_FILE_PNG;
+            imagensOperacaoPath[2]="/multiplicacao" + EXTENSION_FILE_PNG;
+            imagensOperacaoPath[3]="/divisao" + EXTENSION_FILE_PNG;
             
             imagesRoot = "/br/org/jogomatematicoj/imagens";
         }
