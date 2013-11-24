@@ -76,7 +76,7 @@ public class TelaDeEstatisticas extends javax.swing.JFrame {
                     msg = msgTentou;
                     msg = msg.format(msg, (soma.getNumeroErros() + soma.getNumeroAcertos()));
                     if ((soma.getNumeroErros() + soma.getNumeroAcertos()) > 1) {
-                        msg += "s";
+                        msg += "es";
                     }
 
                     lblTentativasSoma.setText(msg);
@@ -112,7 +112,7 @@ public class TelaDeEstatisticas extends javax.swing.JFrame {
                     msg = msgTentou;
                     msg = msg.format(msg, (sub.getNumeroErros() + sub.getNumeroAcertos()));
                     if ((sub.getNumeroErros() + sub.getNumeroAcertos()) > 1) {
-                        msg += "s";
+                        msg += "es";
                     }
 
                     lblTentativasSubtracao.setText(msg);
@@ -148,7 +148,7 @@ public class TelaDeEstatisticas extends javax.swing.JFrame {
                     msg = msgTentou;
                     msg = msg.format(msg, (mult.getNumeroErros() + mult.getNumeroAcertos()));
                     if ((mult.getNumeroErros() + mult.getNumeroAcertos()) > 1) {
-                        msg += "s";
+                        msg += "es";
                     }
 
                     lblTentativasMultiplicacao.setText(msg);
@@ -168,7 +168,7 @@ public class TelaDeEstatisticas extends javax.swing.JFrame {
                     msg = msgAcertos;
                     msg = msg.format(msg, div.getNumeroAcertos());
                     if (div.getNumeroAcertos() > 1) {
-                        msg += "s";
+                        msg += "es";
                     }
 
                     lblAcertosDivisao.setText(msg);
@@ -184,7 +184,7 @@ public class TelaDeEstatisticas extends javax.swing.JFrame {
                     msg = msgTentou;
                     msg = msg.format(msg, (div.getNumeroErros() + div.getNumeroAcertos()));
                     if ((div.getNumeroErros() + div.getNumeroAcertos()) > 1) {
-                        msg += "s";
+                        msg += "es";
                     }
 
                     lblTentativasDivisao.setText(msg);
@@ -224,7 +224,7 @@ public class TelaDeEstatisticas extends javax.swing.JFrame {
                     msg = msgTentou;
                     msg = msg.format(msg, numErros + numAcertos);
                     if ((numErros + numAcertos) > 1) {
-                        msg += "s";
+                        msg += "es";
                     }
 
                     lblTentativasGeral.setText(msg);
