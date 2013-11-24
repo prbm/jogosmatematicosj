@@ -20,4 +20,16 @@ public class DecompoeNumero {
         
         return arr;
     }
+
+    public int[] decompoeInteiro(String num) {
+        String numStr = num;
+        int arr[] = new int[numStr.length()];
+        for (int i = 0; i < numStr.length(); i++) {
+            char c = numStr.charAt(i);
+            arr[i] = Integer.parseInt(Character.toString(c));
+        }
+        
+        return arr;
+    }
+    
 }

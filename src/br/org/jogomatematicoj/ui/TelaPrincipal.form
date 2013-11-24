@@ -48,10 +48,10 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="panelSelecaoOperacoes" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel1" min="-2" pref="236" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="jPanel1" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -70,15 +70,15 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                   <Component id="btSomar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="btSubtrair" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="btMultiplicar" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="btDividir" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -146,8 +146,8 @@
           <Color blue="cc" green="cc" red="cc" type="rgb"/>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-            <LineBorder/>
+          <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+            <EtchetBorder/>
           </Border>
         </Property>
       </Properties>
@@ -155,45 +155,51 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="btIgual" min="-2" max="-2" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                          <Component id="lblOperacaoSelecionada" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="edResultado" min="-2" pref="297" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Component id="sepradorConta" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="1" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="btIgual" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                  <Component id="lblOperacaoSelecionada" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="edResultado" alignment="0" min="-2" pref="113" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="lblFator1Digito004" max="32767" attributes="0"/>
                               <Component id="lblFator2Digito004" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblRespostaDigito004" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
                               <Component id="lblFator2Digito003" max="32767" attributes="0"/>
                               <Component id="lblFator1Digito003" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblRespostaDigito003" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="lblFator2Digito002" max="32767" attributes="0"/>
                               <Component id="lblFator1Digito002" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblRespostaDigito002" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="lblFator2Digito001" max="32767" attributes="0"/>
                               <Component id="lblFator1Digito001" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblRespostaDigito001" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="lblFator1Digito000" max="32767" attributes="0"/>
                               <Component id="lblFator2Digito000" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblRespostaDigito000" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                       </Group>
@@ -205,30 +211,49 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                      <Component id="lblFator1Digito001" alignment="0" max="32767" attributes="0"/>
-                      <Component id="lblFator1Digito002" alignment="0" max="32767" attributes="0"/>
-                      <Component id="lblFator1Digito003" alignment="0" max="32767" attributes="0"/>
-                      <Component id="lblFator1Digito004" alignment="0" max="32767" attributes="0"/>
-                      <Component id="lblFator1Digito000" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="lblFator1Digito001" alignment="0" max="32767" attributes="0"/>
+                              <Component id="lblFator1Digito002" alignment="0" max="32767" attributes="0"/>
+                              <Component id="lblFator1Digito003" alignment="0" max="32767" attributes="0"/>
+                              <Component id="lblFator1Digito004" alignment="0" max="32767" attributes="0"/>
+                              <Component id="lblFator1Digito000" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="edResultado" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="lblOperacaoSelecionada" min="-2" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
                           <Component id="lblFator2Digito000" alignment="0" max="32767" attributes="0"/>
                           <Component id="lblFator2Digito001" alignment="0" max="32767" attributes="0"/>
                           <Component id="lblFator2Digito002" alignment="0" max="32767" attributes="0"/>
                           <Component id="lblFator2Digito003" alignment="0" max="32767" attributes="0"/>
                           <Component id="lblFator2Digito004" min="-2" max="-2" attributes="0"/>
                       </Group>
-                  </Group>
-                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="edResultado" max="32767" attributes="0"/>
-                      <Component id="btIgual" pref="0" max="32767" attributes="0"/>
+                      <Component id="lblOperacaoSelecionada" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
+                  <Component id="sepradorConta" min="-2" pref="10" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="lblRespostaDigito000" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lblRespostaDigito001" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lblRespostaDigito002" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lblRespostaDigito003" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lblRespostaDigito004" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
+                          <Component id="btIgual" min="-2" pref="64" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -240,7 +265,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/br/org/jogomatematicoj/imagens/000.png"/>
+              <Image iconType="3" name="/br/org/jogomatematicoj/imagens/blank.png"/>
             </Property>
           </Properties>
         </Component>
@@ -250,7 +275,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/br/org/jogomatematicoj/imagens/000.png"/>
+              <Image iconType="3" name="/br/org/jogomatematicoj/imagens/blank.png"/>
             </Property>
           </Properties>
         </Component>
@@ -260,7 +285,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/br/org/jogomatematicoj/imagens/000.png"/>
+              <Image iconType="3" name="/br/org/jogomatematicoj/imagens/blank.png"/>
             </Property>
           </Properties>
         </Component>
@@ -270,7 +295,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/br/org/jogomatematicoj/imagens/000.png"/>
+              <Image iconType="3" name="/br/org/jogomatematicoj/imagens/blank.png"/>
             </Property>
           </Properties>
         </Component>
@@ -280,7 +305,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/br/org/jogomatematicoj/imagens/000.png"/>
+              <Image iconType="3" name="/br/org/jogomatematicoj/imagens/blank.png"/>
             </Property>
           </Properties>
         </Component>
@@ -290,7 +315,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/br/org/jogomatematicoj/imagens/000.png"/>
+              <Image iconType="3" name="/br/org/jogomatematicoj/imagens/blank.png"/>
             </Property>
           </Properties>
         </Component>
@@ -300,7 +325,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/br/org/jogomatematicoj/imagens/000.png"/>
+              <Image iconType="3" name="/br/org/jogomatematicoj/imagens/blank.png"/>
             </Property>
           </Properties>
         </Component>
@@ -310,7 +335,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/br/org/jogomatematicoj/imagens/000.png"/>
+              <Image iconType="3" name="/br/org/jogomatematicoj/imagens/blank.png"/>
             </Property>
           </Properties>
         </Component>
@@ -320,7 +345,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/br/org/jogomatematicoj/imagens/000.png"/>
+              <Image iconType="3" name="/br/org/jogomatematicoj/imagens/blank.png"/>
             </Property>
           </Properties>
         </Component>
@@ -330,7 +355,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/br/org/jogomatematicoj/imagens/000.png"/>
+              <Image iconType="3" name="/br/org/jogomatematicoj/imagens/blank.png"/>
             </Property>
           </Properties>
         </Component>
@@ -361,11 +386,70 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Pristina" size="48" style="1"/>
+              <Font name="Pristina" size="18" style="1"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="11"/>
+            <Property name="enabled" type="boolean" value="false"/>
+            <Property name="focusable" type="boolean" value="false"/>
             <Property name="selectedTextColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="0" red="0" type="rgb"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblRespostaDigito000">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/br/org/jogomatematicoj/imagens/blank.png"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblRespostaDigito001">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/br/org/jogomatematicoj/imagens/blank.png"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblRespostaDigito002">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/br/org/jogomatematicoj/imagens/blank.png"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblRespostaDigito004">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/br/org/jogomatematicoj/imagens/blank.png"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblRespostaDigito003">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/br/org/jogomatematicoj/imagens/blank.png"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JSeparator" name="sepradorConta">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="66" type="rgb"/>
             </Property>
           </Properties>
         </Component>
@@ -412,7 +496,7 @@
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="btApagaDigito" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="12" max="32767" attributes="0"/>
+                  <EmptySpace pref="27" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

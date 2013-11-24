@@ -24,8 +24,77 @@ public class TelaPrincipal extends javax.swing.JFrame {
      */
     public TelaPrincipal() {
         initComponents();
+        edResultado.setVisible(false);
+        sepradorConta.setVisible(false);
+        lblOperacaoSelecionada.setVisible(false);
+        btIgual.setVisible(false);
     }
 
+    /**
+     * Add one digit to the answer
+     */
+    private void adicionarDigitoAResposta(String dig){
+        if(edResultado.getText().length()>4)
+            return;
+        
+        edResultado.setText(dig+edResultado.getText());
+        mostrarResposta();
+    }
+    
+    /**
+     * Mount labels with images related to the answer
+     */
+    private void mostrarResposta(){
+        
+        int[] fator = {0, 0, 0, 0, 0};
+        DecompoeNumero dn = new DecompoeNumero();
+        int posArray = 0;
+        
+        fator = dn.decompoeInteiro(edResultado.getText());
+        // escode os números não usados
+        if (fator.length < 5) {
+            lblRespostaDigito004.setIcon(si.getBlankIcon());
+            if (fator.length < 4) {
+                lblRespostaDigito003.setIcon(si.getBlankIcon());
+                if (fator.length < 3) {
+                    lblRespostaDigito002.setIcon(si.getBlankIcon());
+                    if (fator.length < 2) {
+                        lblRespostaDigito001.setIcon(si.getBlankIcon());
+                        if (fator.length < 1) {
+                            lblRespostaDigito000.setIcon(si.getBlankIcon());
+                        }
+                    }
+                }
+            }
+        }
+
+        // determina a posição inicial
+        posArray = 5 - fator.length;
+
+        // posiciona as imagens de acordo com os fatores gerados
+        for (int i = 0; i < fator.length; i++) {
+            switch (posArray) {
+                case 0:
+                    lblRespostaDigito004.setIcon(si.getNumeroIcon(fator[i]));
+                    break;
+                case 1:
+                    lblRespostaDigito003.setIcon(si.getNumeroIcon(fator[i]));
+                    break;
+                case 2:
+                    lblRespostaDigito002.setIcon(si.getNumeroIcon(fator[i]));
+                    break;
+                case 3:
+                    lblRespostaDigito001.setIcon(si.getNumeroIcon(fator[i]));
+                    break;
+                case 4:
+                    lblRespostaDigito000.setIcon(si.getNumeroIcon(fator[i]));
+                    break;
+            }
+            posArray++;
+        }
+        
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -54,6 +123,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         lblOperacaoSelecionada = new javax.swing.JLabel();
         btIgual = new javax.swing.JButton();
         edResultado = new javax.swing.JTextField();
+        lblRespostaDigito000 = new javax.swing.JLabel();
+        lblRespostaDigito001 = new javax.swing.JLabel();
+        lblRespostaDigito002 = new javax.swing.JLabel();
+        lblRespostaDigito004 = new javax.swing.JLabel();
+        lblRespostaDigito003 = new javax.swing.JLabel();
+        sepradorConta = new javax.swing.JSeparator();
         jPanel2 = new javax.swing.JPanel();
         btNum0 = new javax.swing.JButton();
         btNum1 = new javax.swing.JButton();
@@ -108,15 +183,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
         panelSelecaoOperacoesLayout.setHorizontalGroup(
             panelSelecaoOperacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelSelecaoOperacoesLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(19, 19, 19)
                 .addComponent(btSomar)
                 .addGap(18, 18, 18)
                 .addComponent(btSubtrair)
                 .addGap(18, 18, 18)
                 .addComponent(btMultiplicar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(btDividir)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelSelecaoOperacoesLayout.setVerticalGroup(
             panelSelecaoOperacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -131,37 +206,37 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         lblFator1Digito004.setBackground(new java.awt.Color(255, 255, 255));
-        lblFator1Digito004.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/org/jogomatematicoj/imagens/000.png"))); // NOI18N
+        lblFator1Digito004.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/org/jogomatematicoj/imagens/blank.png"))); // NOI18N
 
         lblFator1Digito003.setBackground(new java.awt.Color(255, 255, 255));
-        lblFator1Digito003.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/org/jogomatematicoj/imagens/000.png"))); // NOI18N
+        lblFator1Digito003.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/org/jogomatematicoj/imagens/blank.png"))); // NOI18N
 
         lblFator1Digito002.setBackground(new java.awt.Color(255, 255, 255));
-        lblFator1Digito002.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/org/jogomatematicoj/imagens/000.png"))); // NOI18N
+        lblFator1Digito002.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/org/jogomatematicoj/imagens/blank.png"))); // NOI18N
 
         lblFator1Digito001.setBackground(new java.awt.Color(255, 255, 255));
-        lblFator1Digito001.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/org/jogomatematicoj/imagens/000.png"))); // NOI18N
+        lblFator1Digito001.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/org/jogomatematicoj/imagens/blank.png"))); // NOI18N
 
         lblFator1Digito000.setBackground(new java.awt.Color(255, 255, 255));
-        lblFator1Digito000.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/org/jogomatematicoj/imagens/000.png"))); // NOI18N
+        lblFator1Digito000.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/org/jogomatematicoj/imagens/blank.png"))); // NOI18N
 
         lblFator2Digito004.setBackground(new java.awt.Color(255, 255, 255));
-        lblFator2Digito004.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/org/jogomatematicoj/imagens/000.png"))); // NOI18N
+        lblFator2Digito004.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/org/jogomatematicoj/imagens/blank.png"))); // NOI18N
 
         lblFator2Digito003.setBackground(new java.awt.Color(255, 255, 255));
-        lblFator2Digito003.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/org/jogomatematicoj/imagens/000.png"))); // NOI18N
+        lblFator2Digito003.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/org/jogomatematicoj/imagens/blank.png"))); // NOI18N
 
         lblFator2Digito002.setBackground(new java.awt.Color(255, 255, 255));
-        lblFator2Digito002.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/org/jogomatematicoj/imagens/000.png"))); // NOI18N
+        lblFator2Digito002.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/org/jogomatematicoj/imagens/blank.png"))); // NOI18N
 
         lblFator2Digito001.setBackground(new java.awt.Color(255, 255, 255));
-        lblFator2Digito001.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/org/jogomatematicoj/imagens/000.png"))); // NOI18N
+        lblFator2Digito001.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/org/jogomatematicoj/imagens/blank.png"))); // NOI18N
 
         lblFator2Digito000.setBackground(new java.awt.Color(255, 255, 255));
-        lblFator2Digito000.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/org/jogomatematicoj/imagens/000.png"))); // NOI18N
+        lblFator2Digito000.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/org/jogomatematicoj/imagens/blank.png"))); // NOI18N
 
         lblOperacaoSelecionada.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/org/jogomatematicoj/imagens/soma.png"))); // NOI18N
 
@@ -175,9 +250,28 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         edResultado.setEditable(false);
         edResultado.setBackground(new java.awt.Color(255, 255, 255));
-        edResultado.setFont(new java.awt.Font("Pristina", 1, 48)); // NOI18N
+        edResultado.setFont(new java.awt.Font("Pristina", 1, 18)); // NOI18N
         edResultado.setHorizontalAlignment(javax.swing.JTextField.TRAILING);
+        edResultado.setEnabled(false);
+        edResultado.setFocusable(false);
         edResultado.setSelectedTextColor(new java.awt.Color(0, 0, 102));
+
+        lblRespostaDigito000.setBackground(new java.awt.Color(255, 255, 255));
+        lblRespostaDigito000.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/org/jogomatematicoj/imagens/blank.png"))); // NOI18N
+
+        lblRespostaDigito001.setBackground(new java.awt.Color(255, 255, 255));
+        lblRespostaDigito001.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/org/jogomatematicoj/imagens/blank.png"))); // NOI18N
+
+        lblRespostaDigito002.setBackground(new java.awt.Color(255, 255, 255));
+        lblRespostaDigito002.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/org/jogomatematicoj/imagens/blank.png"))); // NOI18N
+
+        lblRespostaDigito004.setBackground(new java.awt.Color(255, 255, 255));
+        lblRespostaDigito004.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/org/jogomatematicoj/imagens/blank.png"))); // NOI18N
+
+        lblRespostaDigito003.setBackground(new java.awt.Color(255, 255, 255));
+        lblRespostaDigito003.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/org/jogomatematicoj/imagens/blank.png"))); // NOI18N
+
+        sepradorConta.setForeground(new java.awt.Color(102, 0, 0));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -186,61 +280,81 @@ public class TelaPrincipal extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btIgual)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(lblOperacaoSelecionada)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(edResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(sepradorConta)
                         .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btIgual)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(lblOperacaoSelecionada))
+                            .addComponent(edResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(lblFator1Digito004, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblFator2Digito004))
+                            .addComponent(lblFator2Digito004)
+                            .addComponent(lblRespostaDigito004))
                         .addGap(10, 10, 10)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(lblFator2Digito003, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblFator1Digito003))
+                            .addComponent(lblFator1Digito003)
+                            .addComponent(lblRespostaDigito003, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(lblFator2Digito002, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblFator1Digito002))
+                            .addComponent(lblFator1Digito002)
+                            .addComponent(lblRespostaDigito002, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(lblFator2Digito001, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblFator1Digito001))
+                            .addComponent(lblFator1Digito001)
+                            .addComponent(lblRespostaDigito001, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(lblFator1Digito000, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblFator2Digito000))
+                            .addComponent(lblFator2Digito000)
+                            .addComponent(lblRespostaDigito000))
                         .addGap(17, 17, 17))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(lblFator1Digito001, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblFator1Digito002, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblFator1Digito003, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblFator1Digito004, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblFator1Digito000))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(lblFator1Digito001, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblFator1Digito002, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblFator1Digito003, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblFator1Digito004, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblFator1Digito000))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(edResultado)
+                        .addGap(23, 23, 23)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblOperacaoSelecionada)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(lblFator2Digito000, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(lblFator2Digito001, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(lblFator2Digito002, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(lblFator2Digito003, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblFator2Digito004)))
-                .addGap(10, 10, 10)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(edResultado)
-                    .addComponent(btIgual, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(lblFator2Digito004))
+                    .addComponent(lblOperacaoSelecionada))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(sepradorConta, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(lblRespostaDigito000, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblRespostaDigito001, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblRespostaDigito002, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblRespostaDigito003, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblRespostaDigito004))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addComponent(btIgual, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -372,7 +486,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addComponent(btNum4)))
                 .addGap(18, 18, 18)
                 .addComponent(btApagaDigito)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -415,10 +529,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(panelSelecaoOperacoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -667,49 +781,57 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btIgualActionPerformed
 
     private void btNum0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNum0ActionPerformed
-        edResultado.setText("0" + edResultado.getText());
+        adicionarDigitoAResposta("0");
     }//GEN-LAST:event_btNum0ActionPerformed
 
     private void btNum1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNum1ActionPerformed
-        edResultado.setText("1" + edResultado.getText());
+        adicionarDigitoAResposta("1");
     }//GEN-LAST:event_btNum1ActionPerformed
 
     private void btNum2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNum2ActionPerformed
-        edResultado.setText("2" + edResultado.getText());
+        adicionarDigitoAResposta("2");
     }//GEN-LAST:event_btNum2ActionPerformed
 
     private void btNum3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNum3ActionPerformed
-        edResultado.setText("3" + edResultado.getText());
+        adicionarDigitoAResposta("3");
     }//GEN-LAST:event_btNum3ActionPerformed
 
     private void btNum4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNum4ActionPerformed
-        edResultado.setText("4" + edResultado.getText());
+        adicionarDigitoAResposta("4");
     }//GEN-LAST:event_btNum4ActionPerformed
 
     private void btNum5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNum5ActionPerformed
-        edResultado.setText("5" + edResultado.getText());
+        adicionarDigitoAResposta("5");
     }//GEN-LAST:event_btNum5ActionPerformed
 
     private void btNum6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNum6ActionPerformed
-        edResultado.setText("6" + edResultado.getText());
+        adicionarDigitoAResposta("6");
     }//GEN-LAST:event_btNum6ActionPerformed
 
     private void btNum7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNum7ActionPerformed
-        edResultado.setText("7" + edResultado.getText());
+        adicionarDigitoAResposta("7");
     }//GEN-LAST:event_btNum7ActionPerformed
 
     private void btNum8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNum8ActionPerformed
-        edResultado.setText("8" + edResultado.getText());
+        adicionarDigitoAResposta("8");
     }//GEN-LAST:event_btNum8ActionPerformed
 
     private void btNum9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNum9ActionPerformed
-        edResultado.setText("9" + edResultado.getText());
+        adicionarDigitoAResposta("9");
     }//GEN-LAST:event_btNum9ActionPerformed
 
     private void btApagaDigitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btApagaDigitoActionPerformed
+        if(edResultado.getText().length()==0)
+            return;
+        
         String tmp = edResultado.getText();
         tmp = tmp.substring(1);
         edResultado.setText(tmp);
+
+        if(edResultado.getText().length()>=1)
+            mostrarResposta();
+        else
+            lblRespostaDigito000.setIcon(si.getBlankIcon());
     }//GEN-LAST:event_btApagaDigitoActionPerformed
 
     private void btMultiplicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btMultiplicarActionPerformed
@@ -929,6 +1051,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
         lblFator2Digito001.setIcon(si.getNumeroIcon(0));
         lblFator2Digito000.setIcon(si.getNumeroIcon(0));
 
+        lblRespostaDigito004.setIcon(si.getBlankIcon());
+        lblRespostaDigito003.setIcon(si.getBlankIcon());
+        lblRespostaDigito002.setIcon(si.getBlankIcon());
+        lblRespostaDigito001.setIcon(si.getBlankIcon());
+        lblRespostaDigito000.setIcon(si.getBlankIcon());
+        
+        sepradorConta.setVisible(true);
+        lblOperacaoSelecionada.setVisible(true);
+        btIgual.setVisible(true);
+        
         lblOperacaoSelecionada.setIcon(si.getBlankIcon());
         edResultado.setText("");
     }
@@ -998,7 +1130,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel lblFator2Digito003;
     private javax.swing.JLabel lblFator2Digito004;
     private javax.swing.JLabel lblOperacaoSelecionada;
+    private javax.swing.JLabel lblRespostaDigito000;
+    private javax.swing.JLabel lblRespostaDigito001;
+    private javax.swing.JLabel lblRespostaDigito002;
+    private javax.swing.JLabel lblRespostaDigito003;
+    private javax.swing.JLabel lblRespostaDigito004;
     private javax.swing.JPanel panelSelecaoOperacoes;
+    private javax.swing.JSeparator sepradorConta;
     // End of variables declaration//GEN-END:variables
     private int operacaoSelecionada = -1;
     private SelecionaImagem si = new SelecionaImagem();
