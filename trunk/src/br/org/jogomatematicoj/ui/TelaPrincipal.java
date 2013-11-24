@@ -141,6 +141,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         btNum8 = new javax.swing.JButton();
         btNum9 = new javax.swing.JButton();
         btApagaDigito = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        menuResultados = new javax.swing.JMenu();
+        mnuItemResultadosGerais = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Treinando Matemática");
@@ -511,6 +515,23 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        menuResultados.setMnemonic('r');
+        menuResultados.setText("Resultados");
+
+        mnuItemResultadosGerais.setMnemonic('g');
+        mnuItemResultadosGerais.setText("Resultados Gerais");
+        mnuItemResultadosGerais.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuItemResultadosGeraisActionPerformed(evt);
+            }
+        });
+        menuResultados.add(mnuItemResultadosGerais);
+
+        jMenuBar1.add(menuResultados);
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -532,7 +553,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(30, 30, 30))
         );
 
         pack();
@@ -1038,6 +1059,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btDividirActionPerformed
 
+    private void mnuItemResultadosGeraisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuItemResultadosGeraisActionPerformed
+        TelaDeEstatisticas tde = new TelaDeEstatisticas(s, subtracao, multiplicacao, divisao);
+        tde.setVisible(true);
+    }//GEN-LAST:event_mnuItemResultadosGeraisActionPerformed
+
     private void zeraTela() {
         lblFator1Digito004.setIcon(si.getNumeroIcon(0));
         lblFator1Digito003.setIcon(si.getNumeroIcon(0));
@@ -1117,6 +1143,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btSomar;
     private javax.swing.JButton btSubtrair;
     private javax.swing.JTextField edResultado;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblFator1Digito000;
@@ -1135,6 +1163,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel lblRespostaDigito002;
     private javax.swing.JLabel lblRespostaDigito003;
     private javax.swing.JLabel lblRespostaDigito004;
+    private javax.swing.JMenu menuResultados;
+    private javax.swing.JMenuItem mnuItemResultadosGerais;
     private javax.swing.JPanel panelSelecaoOperacoes;
     private javax.swing.JSeparator separadorConta;
     // End of variables declaration//GEN-END:variables
