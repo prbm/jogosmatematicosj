@@ -764,6 +764,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btSubtrairActionPerformed
 
     private void btIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btIgualActionPerformed
+        if(edResultado.getText().length()<1)
+            return;
+        
         switch (operacaoSelecionada) {
             case OperacoesBase.SOMA:
                 s.soma2Inteiros(Integer.parseInt(edResultado.getText()));
