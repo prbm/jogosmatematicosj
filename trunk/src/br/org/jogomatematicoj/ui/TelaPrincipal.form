@@ -84,15 +84,15 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="btDividir" max="32767" attributes="0"/>
                       <Component id="btMultiplicar" max="32767" attributes="0"/>
                       <Component id="btSubtrair" max="32767" attributes="0"/>
-                      <Component id="btSomar" alignment="0" max="32767" attributes="0"/>
+                      <Component id="btSomar" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -159,7 +159,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <Component id="sepradorConta" max="32767" attributes="0"/>
+                          <Component id="separadorConta" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
@@ -171,7 +171,7 @@
                               </Group>
                               <Component id="edResultado" alignment="0" min="-2" pref="113" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="8" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="lblFator1Digito004" max="32767" attributes="0"/>
                               <Component id="lblFator2Digito004" min="-2" max="-2" attributes="0"/>
@@ -238,7 +238,7 @@
                       <Component id="lblOperacaoSelecionada" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="sepradorConta" min="-2" pref="10" max="-2" attributes="0"/>
+                  <Component id="separadorConta" min="-2" pref="10" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
@@ -446,7 +446,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JSeparator" name="sepradorConta">
+        <Component class="javax.swing.JSeparator" name="separadorConta">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="66" type="rgb"/>
@@ -494,9 +494,9 @@
                           <Component id="btNum4" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Component id="btApagaDigito" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="27" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

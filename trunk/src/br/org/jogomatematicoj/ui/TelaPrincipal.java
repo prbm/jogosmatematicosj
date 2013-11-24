@@ -25,7 +25,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     public TelaPrincipal() {
         initComponents();
         edResultado.setVisible(false);
-        sepradorConta.setVisible(false);
+        separadorConta.setVisible(false);
         lblOperacaoSelecionada.setVisible(false);
         btIgual.setVisible(false);
     }
@@ -128,7 +128,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         lblRespostaDigito002 = new javax.swing.JLabel();
         lblRespostaDigito004 = new javax.swing.JLabel();
         lblRespostaDigito003 = new javax.swing.JLabel();
-        sepradorConta = new javax.swing.JSeparator();
+        separadorConta = new javax.swing.JSeparator();
         jPanel2 = new javax.swing.JPanel();
         btNum0 = new javax.swing.JButton();
         btNum1 = new javax.swing.JButton();
@@ -195,14 +195,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
         panelSelecaoOperacoesLayout.setVerticalGroup(
             panelSelecaoOperacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelSelecaoOperacoesLayout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelSelecaoOperacoesLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panelSelecaoOperacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btDividir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btMultiplicar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btSubtrair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btSomar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btSomar))
+                .addContainerGap())
         );
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
@@ -271,7 +271,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         lblRespostaDigito003.setBackground(new java.awt.Color(255, 255, 255));
         lblRespostaDigito003.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/org/jogomatematicoj/imagens/blank.png"))); // NOI18N
 
-        sepradorConta.setForeground(new java.awt.Color(102, 0, 0));
+        separadorConta.setForeground(new java.awt.Color(102, 0, 0));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -281,7 +281,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(sepradorConta)
+                        .addComponent(separadorConta)
                         .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -290,7 +290,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(lblOperacaoSelecionada))
                             .addComponent(edResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(lblFator1Digito004, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblFator2Digito004)
@@ -342,7 +342,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addComponent(lblFator2Digito004))
                     .addComponent(lblOperacaoSelecionada))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(sepradorConta, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(separadorConta, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -484,9 +484,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addComponent(btNum3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btNum4)))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btApagaDigito)
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addGap(19, 19, 19))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1057,7 +1057,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         lblRespostaDigito001.setIcon(si.getBlankIcon());
         lblRespostaDigito000.setIcon(si.getBlankIcon());
         
-        sepradorConta.setVisible(true);
+        separadorConta.setVisible(true);
         lblOperacaoSelecionada.setVisible(true);
         btIgual.setVisible(true);
         
@@ -1136,7 +1136,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel lblRespostaDigito003;
     private javax.swing.JLabel lblRespostaDigito004;
     private javax.swing.JPanel panelSelecaoOperacoes;
-    private javax.swing.JSeparator sepradorConta;
+    private javax.swing.JSeparator separadorConta;
     // End of variables declaration//GEN-END:variables
     private int operacaoSelecionada = -1;
     private SelecionaImagem si = new SelecionaImagem();
