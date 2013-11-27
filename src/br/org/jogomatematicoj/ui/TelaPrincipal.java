@@ -42,6 +42,73 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
     
     /**
+     * mount the labels of factors according the generated values
+     * @param fatores 
+     */
+    private void mostrarLabels(int[] fatores){
+        DecompoeNumero dn = new DecompoeNumero();
+        int[] fator = {0,0,0,0,0};
+        int posArray = 0;
+        
+        // determina os labels de acordo com o número gerado para o fator 1
+        fator = dn.decompoeInteiro(fatores[0]);
+
+        // determina a posição inicial
+        posArray = 5 - fator.length;
+
+        // posiciona as imagens de acordo com os fatores gerados
+        for (int i = 0; i < fator.length; i++) {
+            switch (posArray) {
+                case 0:
+                    lblFator1Digito004.setIcon(si.getNumeroIcon(fator[i]));
+                    break;
+                case 1:
+                    lblFator1Digito003.setIcon(si.getNumeroIcon(fator[i]));
+                    break;
+                case 2:
+                    lblFator1Digito002.setIcon(si.getNumeroIcon(fator[i]));
+                    break;
+                case 3:
+                    lblFator1Digito001.setIcon(si.getNumeroIcon(fator[i]));
+                    break;
+                case 4:
+                    lblFator1Digito000.setIcon(si.getNumeroIcon(fator[i]));
+                    break;
+            }
+            posArray++;
+        }
+
+        // determina os labels de acordo com o número gerado para o fator 2
+        fator = dn.decompoeInteiro(fatores[1]);
+
+        // determina a posição inicial
+        posArray = 5 - fator.length;
+
+        // posiciona as imagens de acordo com os fatores gerados
+        for (int i = 0; i < fator.length; i++) {
+            switch (posArray) {
+                case 0:
+                    lblFator2Digito004.setIcon(si.getNumeroIcon(fator[i]));
+                    break;
+                case 1:
+                    lblFator2Digito003.setIcon(si.getNumeroIcon(fator[i]));
+                    break;
+                case 2:
+                    lblFator2Digito002.setIcon(si.getNumeroIcon(fator[i]));
+                    break;
+                case 3:
+                    lblFator2Digito001.setIcon(si.getNumeroIcon(fator[i]));
+                    break;
+                case 4:
+                    lblFator2Digito000.setIcon(si.getNumeroIcon(fator[i]));
+                    break;
+            }
+            posArray++;
+        }
+        
+    }
+    
+    /**
      * Mount labels with images related to the answer
      */
     private void mostrarResposta(){
@@ -562,203 +629,29 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void btSomarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSomarActionPerformed
         operacaoSelecionada = OperacoesBase.SOMA;
-        DecompoeNumero dn = new DecompoeNumero();
-        int[] fator = {0, 0, 0, 0, 0};
-        int posArray = 0;
-
+        int[] fatores = new int[2];
+        
         s.gerar2Inteiros(numMaximoSomaSubtrai);
-
+        fatores[0] = s.getFator1();
+        fatores[1] = s.getFator2();
+        
         zeraTela();
-        // determina os labels para o fator 1
-        fator = dn.decompoeInteiro(s.getFator1());
-        // escode os números não usados
-        if (fator.length < 5) {
-            lblFator1Digito004.setIcon(si.getBlankIcon());
-            if (fator.length < 4) {
-                lblFator1Digito003.setIcon(si.getBlankIcon());
-                if (fator.length < 3) {
-                    lblFator1Digito002.setIcon(si.getBlankIcon());
-                    if (fator.length < 2) {
-                        lblFator1Digito001.setIcon(si.getBlankIcon());
-                        if (fator.length < 1) {
-                            lblFator1Digito000.setIcon(si.getBlankIcon());
-                        }
-                    }
-                }
-            }
-        }
-
-        // determina a posição inicial
-        posArray = 5 - fator.length;
-
-        // posiciona as imagens de acordo com os fatores gerados
-        for (int i = 0; i < fator.length; i++) {
-            switch (posArray) {
-                case 0:
-                    lblFator1Digito004.setIcon(si.getNumeroIcon(fator[i]));
-                    break;
-                case 1:
-                    lblFator1Digito003.setIcon(si.getNumeroIcon(fator[i]));
-                    break;
-                case 2:
-                    lblFator1Digito002.setIcon(si.getNumeroIcon(fator[i]));
-                    break;
-                case 3:
-                    lblFator1Digito001.setIcon(si.getNumeroIcon(fator[i]));
-                    break;
-                case 4:
-                    lblFator1Digito000.setIcon(si.getNumeroIcon(fator[i]));
-                    break;
-            }
-            posArray++;
-        }
-
-        // determina os labels para o fator 2
-        fator = dn.decompoeInteiro(s.getFator2());
-        // escode os números não usados
-        if (fator.length < 5) {
-            lblFator2Digito004.setIcon(si.getBlankIcon());
-            if (fator.length < 4) {
-                lblFator2Digito003.setIcon(si.getBlankIcon());
-                if (fator.length < 3) {
-                    lblFator2Digito002.setIcon(si.getBlankIcon());
-                    if (fator.length < 2) {
-                        lblFator2Digito001.setIcon(si.getBlankIcon());
-                        if (fator.length < 1) {
-                            lblFator2Digito000.setIcon(si.getBlankIcon());
-                        }
-                    }
-                }
-            }
-        }
-
-        // determina a posição inicial
-        posArray = 5 - fator.length;
-
-        // posiciona as imagens de acordo com os fatores gerados
-        for (int i = 0; i < fator.length; i++) {
-            switch (posArray) {
-                case 0:
-                    lblFator2Digito004.setIcon(si.getNumeroIcon(fator[i]));
-                    break;
-                case 1:
-                    lblFator2Digito003.setIcon(si.getNumeroIcon(fator[i]));
-                    break;
-                case 2:
-                    lblFator2Digito002.setIcon(si.getNumeroIcon(fator[i]));
-                    break;
-                case 3:
-                    lblFator2Digito001.setIcon(si.getNumeroIcon(fator[i]));
-                    break;
-                case 4:
-                    lblFator2Digito000.setIcon(si.getNumeroIcon(fator[i]));
-                    break;
-            }
-            posArray++;
-        }
+        mostrarLabels(fatores);
 
         lblOperacaoSelecionada.setIcon(si.getOperacaoIcon(OperacoesBase.SOMA));
         edResultado.setText("");
-//        lblFator1Digito000.setIcon(si.getNumeroIcon(8));
     }//GEN-LAST:event_btSomarActionPerformed
 
     private void btSubtrairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSubtrairActionPerformed
         operacaoSelecionada = OperacoesBase.SUBTRACAO;
-        DecompoeNumero dn = new DecompoeNumero();
-        int[] fator = {0, 0, 0, 0, 0};
-        int posArray = 0;
-
+        int[] fatores = new int[2];
+        
         subtracao.gerar2Inteiros(numMaximoSomaSubtrai);
-
+        fatores[0] = subtracao.getFator1();
+        fatores[1] = subtracao.getFator2();
+        
         zeraTela();
-        // determina os labels para o fator 1
-        fator = dn.decompoeInteiro(subtracao.getFator1());
-        // escode os números não usados
-        if (fator.length < 5) {
-            lblFator1Digito004.setIcon(si.getBlankIcon());
-            if (fator.length < 4) {
-                lblFator1Digito003.setIcon(si.getBlankIcon());
-                if (fator.length < 3) {
-                    lblFator1Digito002.setIcon(si.getBlankIcon());
-                    if (fator.length < 2) {
-                        lblFator1Digito001.setIcon(si.getBlankIcon());
-                        if (fator.length < 1) {
-                            lblFator1Digito000.setIcon(si.getBlankIcon());
-                        }
-                    }
-                }
-            }
-        }
-
-        // determina a posição inicial
-        posArray = 5 - fator.length;
-
-        // posiciona as imagens de acordo com os fatores gerados
-        for (int i = 0; i < fator.length; i++) {
-            switch (posArray) {
-                case 0:
-                    lblFator1Digito004.setIcon(si.getNumeroIcon(fator[i]));
-                    break;
-                case 1:
-                    lblFator1Digito003.setIcon(si.getNumeroIcon(fator[i]));
-                    break;
-                case 2:
-                    lblFator1Digito002.setIcon(si.getNumeroIcon(fator[i]));
-                    break;
-                case 3:
-                    lblFator1Digito001.setIcon(si.getNumeroIcon(fator[i]));
-                    break;
-                case 4:
-                    lblFator1Digito000.setIcon(si.getNumeroIcon(fator[i]));
-                    break;
-            }
-            posArray++;
-        }
-
-        // determina os labels para o fator 2
-        fator = dn.decompoeInteiro(subtracao.getFator2());
-        // escode os números não usados
-        if (fator.length < 5) {
-            lblFator2Digito004.setIcon(si.getBlankIcon());
-            if (fator.length < 4) {
-                lblFator2Digito003.setIcon(si.getBlankIcon());
-                if (fator.length < 3) {
-                    lblFator2Digito002.setIcon(si.getBlankIcon());
-                    if (fator.length < 2) {
-                        lblFator2Digito001.setIcon(si.getBlankIcon());
-                        if (fator.length < 1) {
-                            lblFator2Digito000.setIcon(si.getBlankIcon());
-                        }
-                    }
-                }
-            }
-        }
-
-        // determina a posição inicial
-        posArray = 5 - fator.length;
-
-        // posiciona as imagens de acordo com os fatores gerados
-        for (int i = 0; i < fator.length; i++) {
-            switch (posArray) {
-                case 0:
-                    lblFator2Digito004.setIcon(si.getNumeroIcon(fator[i]));
-                    break;
-                case 1:
-                    lblFator2Digito003.setIcon(si.getNumeroIcon(fator[i]));
-                    break;
-                case 2:
-                    lblFator2Digito002.setIcon(si.getNumeroIcon(fator[i]));
-                    break;
-                case 3:
-                    lblFator2Digito001.setIcon(si.getNumeroIcon(fator[i]));
-                    break;
-                case 4:
-                    lblFator2Digito000.setIcon(si.getNumeroIcon(fator[i]));
-                    break;
-            }
-            posArray++;
-        }
-
+        mostrarLabels(fatores);
         lblOperacaoSelecionada.setIcon(si.getOperacaoIcon(OperacoesBase.SUBTRACAO));
         edResultado.setText("");
     }//GEN-LAST:event_btSubtrairActionPerformed
@@ -860,101 +753,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void btMultiplicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btMultiplicarActionPerformed
         operacaoSelecionada = OperacoesBase.MULTIPLICACAO;
-        DecompoeNumero dn = new DecompoeNumero();
-        int[] fator = {0, 0, 0, 0, 0};
-        int posArray = 0;
-
+        int[] fatores = new int[2];
+        
         multiplicacao.gerar2Inteiros();
-
+        fatores[0] = multiplicacao.getFator1();
+        fatores[1] = multiplicacao.getFator2();
+        
         zeraTela();
-        // determina os labels para o fator 1
-        fator = dn.decompoeInteiro(multiplicacao.getFator1());
-        // escode os números não usados
-        if (fator.length < 5) {
-            lblFator1Digito004.setIcon(si.getBlankIcon());
-            if (fator.length < 4) {
-                lblFator1Digito003.setIcon(si.getBlankIcon());
-                if (fator.length < 3) {
-                    lblFator1Digito002.setIcon(si.getBlankIcon());
-                    if (fator.length < 2) {
-                        lblFator1Digito001.setIcon(si.getBlankIcon());
-                        if (fator.length < 1) {
-                            lblFator1Digito000.setIcon(si.getBlankIcon());
-                        }
-                    }
-                }
-            }
-        }
-
-        // determina a posição inicial
-        posArray = 5 - fator.length;
-
-        // posiciona as imagens de acordo com os fatores gerados
-        for (int i = 0; i < fator.length; i++) {
-            switch (posArray) {
-                case 0:
-                    lblFator1Digito004.setIcon(si.getNumeroIcon(fator[i]));
-                    break;
-                case 1:
-                    lblFator1Digito003.setIcon(si.getNumeroIcon(fator[i]));
-                    break;
-                case 2:
-                    lblFator1Digito002.setIcon(si.getNumeroIcon(fator[i]));
-                    break;
-                case 3:
-                    lblFator1Digito001.setIcon(si.getNumeroIcon(fator[i]));
-                    break;
-                case 4:
-                    lblFator1Digito000.setIcon(si.getNumeroIcon(fator[i]));
-                    break;
-            }
-            posArray++;
-        }
-
-        // determina os labels para o fator 2
-        fator = dn.decompoeInteiro(multiplicacao.getFator2());
-        // escode os números não usados
-        if (fator.length < 5) {
-            lblFator2Digito004.setIcon(si.getBlankIcon());
-            if (fator.length < 4) {
-                lblFator2Digito003.setIcon(si.getBlankIcon());
-                if (fator.length < 3) {
-                    lblFator2Digito002.setIcon(si.getBlankIcon());
-                    if (fator.length < 2) {
-                        lblFator2Digito001.setIcon(si.getBlankIcon());
-                        if (fator.length < 1) {
-                            lblFator2Digito000.setIcon(si.getBlankIcon());
-                        }
-                    }
-                }
-            }
-        }
-
-        // determina a posição inicial
-        posArray = 5 - fator.length;
-
-        // posiciona as imagens de acordo com os fatores gerados
-        for (int i = 0; i < fator.length; i++) {
-            switch (posArray) {
-                case 0:
-                    lblFator2Digito004.setIcon(si.getNumeroIcon(fator[i]));
-                    break;
-                case 1:
-                    lblFator2Digito003.setIcon(si.getNumeroIcon(fator[i]));
-                    break;
-                case 2:
-                    lblFator2Digito002.setIcon(si.getNumeroIcon(fator[i]));
-                    break;
-                case 3:
-                    lblFator2Digito001.setIcon(si.getNumeroIcon(fator[i]));
-                    break;
-                case 4:
-                    lblFator2Digito000.setIcon(si.getNumeroIcon(fator[i]));
-                    break;
-            }
-            posArray++;
-        }
-
+        mostrarLabels(fatores);
         lblOperacaoSelecionada.setIcon(si.getOperacaoIcon(OperacoesBase.MULTIPLICACAO));
         edResultado.setText("");
 
@@ -962,100 +768,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void btDividirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDividirActionPerformed
         operacaoSelecionada = OperacoesBase.DIVISAO;
-        DecompoeNumero dn = new DecompoeNumero();
-        int[] fator = {0, 0, 0, 0, 0};
-        int posArray = 0;
-
+        int[] fatores = new int[2];
+        
         divisao.gerar2Inteiros();
-
+        fatores[0] = divisao.getFator1();
+        fatores[1] = divisao.getFator2();
+        
         zeraTela();
-        // determina os labels para o fator 1
-        fator = dn.decompoeInteiro(divisao.getFator1());
-        // escode os números não usados
-        if (fator.length < 5) {
-            lblFator1Digito004.setIcon(si.getBlankIcon());
-            if (fator.length < 4) {
-                lblFator1Digito003.setIcon(si.getBlankIcon());
-                if (fator.length < 3) {
-                    lblFator1Digito002.setIcon(si.getBlankIcon());
-                    if (fator.length < 2) {
-                        lblFator1Digito001.setIcon(si.getBlankIcon());
-                        if (fator.length < 1) {
-                            lblFator1Digito000.setIcon(si.getBlankIcon());
-                        }
-                    }
-                }
-            }
-        }
-
-        // determina a posição inicial
-        posArray = 5 - fator.length;
-
-        // posiciona as imagens de acordo com os fatores gerados
-        for (int i = 0; i < fator.length; i++) {
-            switch (posArray) {
-                case 0:
-                    lblFator1Digito004.setIcon(si.getNumeroIcon(fator[i]));
-                    break;
-                case 1:
-                    lblFator1Digito003.setIcon(si.getNumeroIcon(fator[i]));
-                    break;
-                case 2:
-                    lblFator1Digito002.setIcon(si.getNumeroIcon(fator[i]));
-                    break;
-                case 3:
-                    lblFator1Digito001.setIcon(si.getNumeroIcon(fator[i]));
-                    break;
-                case 4:
-                    lblFator1Digito000.setIcon(si.getNumeroIcon(fator[i]));
-                    break;
-            }
-            posArray++;
-        }
-
-        // determina os labels para o fator 2
-        fator = dn.decompoeInteiro(divisao.getFator2());
-        // escode os números não usados
-        if (fator.length < 5) {
-            lblFator2Digito004.setIcon(si.getBlankIcon());
-            if (fator.length < 4) {
-                lblFator2Digito003.setIcon(si.getBlankIcon());
-                if (fator.length < 3) {
-                    lblFator2Digito002.setIcon(si.getBlankIcon());
-                    if (fator.length < 2) {
-                        lblFator2Digito001.setIcon(si.getBlankIcon());
-                        if (fator.length < 1) {
-                            lblFator2Digito000.setIcon(si.getBlankIcon());
-                        }
-                    }
-                }
-            }
-        }
-
-        // determina a posição inicial
-        posArray = 5 - fator.length;
-
-        // posiciona as imagens de acordo com os fatores gerados
-        for (int i = 0; i < fator.length; i++) {
-            switch (posArray) {
-                case 0:
-                    lblFator2Digito004.setIcon(si.getNumeroIcon(fator[i]));
-                    break;
-                case 1:
-                    lblFator2Digito003.setIcon(si.getNumeroIcon(fator[i]));
-                    break;
-                case 2:
-                    lblFator2Digito002.setIcon(si.getNumeroIcon(fator[i]));
-                    break;
-                case 3:
-                    lblFator2Digito001.setIcon(si.getNumeroIcon(fator[i]));
-                    break;
-                case 4:
-                    lblFator2Digito000.setIcon(si.getNumeroIcon(fator[i]));
-                    break;
-            }
-            posArray++;
-        }
+        mostrarLabels(fatores);
 
         lblOperacaoSelecionada.setIcon(si.getOperacaoIcon(OperacoesBase.DIVISAO));
         edResultado.setText("");
@@ -1068,17 +788,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_mnuItemResultadosGeraisActionPerformed
 
     private void zeraTela() {
-        lblFator1Digito004.setIcon(si.getNumeroIcon(0));
-        lblFator1Digito003.setIcon(si.getNumeroIcon(0));
-        lblFator1Digito002.setIcon(si.getNumeroIcon(0));
-        lblFator1Digito001.setIcon(si.getNumeroIcon(0));
-        lblFator1Digito000.setIcon(si.getNumeroIcon(0));
+        lblFator1Digito004.setIcon(si.getBlankIcon());
+        lblFator1Digito003.setIcon(si.getBlankIcon());
+        lblFator1Digito002.setIcon(si.getBlankIcon());
+        lblFator1Digito001.setIcon(si.getBlankIcon());
+        lblFator1Digito000.setIcon(si.getBlankIcon());
 
-        lblFator2Digito004.setIcon(si.getNumeroIcon(0));
-        lblFator2Digito003.setIcon(si.getNumeroIcon(0));
-        lblFator2Digito002.setIcon(si.getNumeroIcon(0));
-        lblFator2Digito001.setIcon(si.getNumeroIcon(0));
-        lblFator2Digito000.setIcon(si.getNumeroIcon(0));
+        lblFator2Digito004.setIcon(si.getBlankIcon());
+        lblFator2Digito003.setIcon(si.getBlankIcon());
+        lblFator2Digito002.setIcon(si.getBlankIcon());
+        lblFator2Digito001.setIcon(si.getBlankIcon());
+        lblFator2Digito000.setIcon(si.getBlankIcon());
 
         lblRespostaDigito004.setIcon(si.getBlankIcon());
         lblRespostaDigito003.setIcon(si.getBlankIcon());
