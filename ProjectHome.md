@@ -1,0 +1,1 @@
+A small game for matemathics training develped in Java.
